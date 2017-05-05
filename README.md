@@ -28,3 +28,8 @@ tox -r
 
 # Need more detail during the scan?
 Change the logging level in the config file from 'WARNING' to 'INFO'
+
+# How fast is this scanner?
+This scanner is made to be gentle. It send a request every 10 sec, and
+the mecanism of sleep_schedule is made to stop the scan during peak
+periods to not overload the servers.

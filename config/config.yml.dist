@@ -1,33 +1,44 @@
 service:
-  name: 'DominoPizza_CA'
-  host: 'order.dominos.ca'
-  url: 'https://order.dominos.ca/power/store/10057/coupon/%d?lang=en'
+  name: 'DominoPizza'
+  host: 'order.dominos'
+  url: 'https://order.dominos.com/power/store/10000/coupon/%d?lang=en'
   step: 1
   start: 1000
   end: 9999
 
 sleep_schedule:
-  enabled: False
+  enabled: True
   enable_reminder: True
   reminder_interval: 600
   entries:
     # Night
-    - enabled: False
+    - enabled: True
       # When the sleep should start (24h format hh:mm)
-      start_time: '2:40'
+      start_time: '23:40'
       # How long is the sleep (hh:mm)
-      duration: '8:30'
+      duration: '9:30'
       ## Random offset
       # Add at the initial start time a random extra time (between 00:00 and XXX_random_offset)
       # Ex: 23:40 + 15
       start_time_random_offset: '0:20'
       duration_random_offset: '0:20'
     # Launch
-    - enabled: False
+    - enabled: True
       # When the sleep should start
-      start_time: '12:10'
+      start_time: '11:30'
       # How long is the sleep
-      duration: '0:30'
+      duration: '1:30'
+      ## Random offset
+      # Add at the initial start time a random extra time (between 00:00 and XXX_random_offset)
+      # Ex: 23:40 + 15
+      start_time_random_offset: '0:10'
+      duration_random_offset: '0:05'
+    # Diner
+    - enabled: True
+      # When the sleep should start
+      start_time: '17:30'
+      # How long is the sleep
+      duration: '3:00'
       ## Random offset
       # Add at the initial start time a random extra time (between 00:00 and XXX_random_offset)
       # Ex: 23:40 + 15
