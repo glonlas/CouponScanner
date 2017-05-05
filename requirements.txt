@@ -1,0 +1,4 @@
+PyYAML >= 3.11
+requests >=2.11.1
+colorlog >= 2.7.0
+tinydb >= 3.2.1

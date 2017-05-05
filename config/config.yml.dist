@@ -1,0 +1,48 @@
+service:
+  name: 'DominoPizza_CA'
+  host: 'order.dominos.ca'
+  url: 'https://order.dominos.ca/power/store/10057/coupon/%d?lang=en'
+  step: 1
+  start: 1000
+  end: 9999
+
+sleep_schedule:
+  enabled: False
+  enable_reminder: True
+  reminder_interval: 600
+  entries:
+    # Night
+    - enabled: False
+      # When the sleep should start (24h format hh:mm)
+      start_time: '2:40'
+      # How long is the sleep (hh:mm)
+      duration: '8:30'
+      ## Random offset
+      # Add at the initial start time a random extra time (between 00:00 and XXX_random_offset)
+      # Ex: 23:40 + 15
+      start_time_random_offset: '0:20'
+      duration_random_offset: '0:20'
+    # Launch
+    - enabled: False
+      # When the sleep should start
+      start_time: '12:10'
+      # How long is the sleep
+      duration: '0:30'
+      ## Random offset
+      # Add at the initial start time a random extra time (between 00:00 and XXX_random_offset)
+      # Ex: 23:40 + 15
+      start_time_random_offset: '0:10'
+      duration_random_offset: '0:05'
+
+browser:
+  user_agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36  (KHTML, like Gecko) Chrome/53.0.2785.101 Safari/537.36'
+  accept_language: 'fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4'
+  proxy: ''
+
+
+logs:
+  # 0 only write in file log; 1 display terminal and write in file log
+  mode: 1
+  colored: True
+  path: 'log/'
+  level: 'WARNING'
