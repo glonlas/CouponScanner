@@ -219,9 +219,14 @@ class Scanner:
         if 'Name' in json.keys():
             name = json['Name']
 
+        # Coupon price
+        price = ''
+        if 'Price' in json.keys():
+            price = json['Price']
+
         # Add the follower to the DB
-        self.coupon_db.insert({'coupon_id': code, 'expires': expires, 'name': name})
-        log_string = "Coupon #%s: %s" % (code, name)
+        self.coupon_db.insert({'coupon_id': code, 'expires': expires, 'name': name, 'price': price})
+        log_string = "Coupon #%s - $%s: %s" % (code, price, name)
         self.logger.warning(log_string, extra={'action': 'Coupon'})
 
         return True
